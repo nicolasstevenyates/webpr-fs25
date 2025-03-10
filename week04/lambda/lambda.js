@@ -1,21 +1,23 @@
+const id    = x => x;
+const konst = x => y => x; // Kestrel, K
+const fst   = konst;       // just an alias
+const snd   = x => y => y; // Kite,    KI
 
-const id    = x      => x;
-const konst = x => y => x;
-const snd   = x => y => y;
+// const T     = x => y => x;
+// const F     = x => y => y;
+const T     = konst;
+const F     = snd;
 
-const T =  konst;
-const F =  snd;
+const and   = p => q => p ( q ) ( p ) ;
+const or    = p => q => p ( p ) ( q );
 
-const and = a => b => a (b) (a);
-const or  = a => a (a) ;
-
-const Pair      =  fn => ln => sel =>  sel(fn)(ln) ;
-const firstname = konst;
+const Pair      = x => y => f => f (x) (y); // Vireo, V
+const firstname = fst;
 const lastname  = snd;
 
-const Left   = x => lch => rch => lch(x);
-const Right  = x => lch => rch => rch(x);
-const either = id;
+const Left   = x => f => g => f(x);
+const Right  = x => f => g => g(x);
+const either = e => bad => good => e (bad) (good);
 
 
 // ----- special -----
