@@ -2,29 +2,35 @@
 
 const MAX = 20;
 
-const north = Pair( 0)(-1);
-const east  = Pair( 1)( 0);
-const south = Pair( 0)( 1);
-const west  = Pair(-1)( 0);
+const dx = fst;
+const dy = snd;
+const Direction = Pair;
+const north = Direction( 0)(-1);
+const east  = Direction( 1)( 0);
+const south = Direction( 0)( 1);
+const west  = Direction(-1)( 0);
 
 let direction = north;
 
 const clockwise = [north, east, south, west, north];
 const countercw = [north, west, south, east, north];
 
+const x = fst;
+const y = snd;
+const Position = Pair;
 const snake = [
-    Pair(10)(5),
-    Pair(10)(6),
-    Pair(10)(7),
-    Pair(10)(8),
+    Position(10)(5),
+    Position(10)(6),
+    Position(10)(7),
+    Position(10)(8),
 ];
-let food    = Pair(15)(15);
+let food = Position(15)(15);
 
 // function snakeEquals(a, b) { return a.x === b.x && a.y === b.y }
-const pairEq = a => b =>  undefined; // todo: your code here
+const pairEq = a => b =>  a(x) === b(x) && a(y) === b(y); // todo: your code here
 
 // Pair + Pair = Pair        // Monoid
-const pairPlus = a => b =>  undefined; // todo: your code here
+const pairPlus = a => b =>  Pair (a(fst)+b(fst)) (a(snd)+b(snd)); // todo: your code here
 
 // Function and Pair = Pair  // Functor
 const pairMap = f => p =>  undefined; // todo: your code here
