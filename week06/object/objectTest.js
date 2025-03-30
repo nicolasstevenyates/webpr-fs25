@@ -144,7 +144,7 @@
 
     function Person(first, last) {
         const firstname = first;
-        const lastname = last;
+        const lastname  = last;
         return {
             // cannot use "this" as it is undefined
             getName   : () => firstname + " " + lastname
