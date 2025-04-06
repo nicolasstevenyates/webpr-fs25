@@ -13,6 +13,7 @@ const id = x => x;
 
 /**
  * A function with two parameters in curried form, that returns the first of the two parameters.
+ * @template _T_
  * @type { <_T_> (x:_T_) => (...*) => _T_  }
  * @pure
  * @example
