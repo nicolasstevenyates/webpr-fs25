@@ -8,11 +8,21 @@
 
 <script>
 
+    /**
+     * uses {@link document.writeln write} to show the value plus 1
+     * @function
+     * @param  { "42" | "100"  } arg
+     * @return { String }
+     * @example
+     * foo(42) // will return 421
+     */
     const foo = arg => {
         return (arg + 1);
     };
 
-    document.writeln( foo(42) );
+    document.writeln( foo("42") );
+    document.writeln( foo("100") );
+    document.writeln( foo("101") );
 
 </script>
 
