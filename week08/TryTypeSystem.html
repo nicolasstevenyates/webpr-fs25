@@ -22,10 +22,10 @@
 
 
     document.writeln( String(foo(42)) );
-    document.writeln( foo(true) );
+    // document.writeln( foo(true) ); // should fail type check
     document.writeln( foo("42") );
     document.writeln( foo("0") );
-    document.writeln( foo("1") );
+    // document.writeln( foo("1") ); // should fail type check
 
     /**
      * @typedef PersonType
