@@ -9,10 +9,31 @@
 <div id="out"></div>
 
 <script>
+
+    /**
+     * @typedef TodoType
+     * @property { Number } id     - primary key
+     * @property { Number } userId - foreign key
+     * @property { String } title  -
+     * @property { Boolean } completed  -
+     */
     // Example
+
+    /** @type { (todo:TodoType) => * } */
+    const show = todo => out.textContent = todo.title;
 
     // 'https://jsonplaceholder.typicode.com/todos/1'
 
+    // fetch('https://jsonplaceholder.typicode.com/todos/1')
+    //     .then( resp => resp.json())
+    //     .then( show );
+
+    const foo = async () => {
+        const resp = await fetch('https://jsonplaceholder.typicode.com/todos/2');
+        const todo = await resp.json();
+        show(todo);
+    };
+    foo();
 
 </script>
 
